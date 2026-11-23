@@ -14,7 +14,7 @@ def health(request):
             cursor.execute("SELECT 1")
             cursor.fetchone()
         database = "ok"
-    except Exception:  # noqa: BLE001 - report any failure as unhealthy
+    except Exception:  # noqa: BLE001 - any failure is reported as unhealthy
         database = "unavailable"
 
     healthy = database == "ok"
