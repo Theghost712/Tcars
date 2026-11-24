@@ -1,0 +1,32 @@
+"""Shared choices for the marketplace."""
+
+REGIONS = [
+    ("Dar es Salaam", "Dar es Salaam"),
+    ("Arusha", "Arusha"),
+    ("Dodoma", "Dodoma"),
+    ("Geita", "Geita"),
+    ("Iringa", "Iringa"),
+    ("Kagera", "Kagera"),
+    ("Katavi", "Katavi"),
+    ("Kigoma", "Kigoma"),
+    ("Kilimanjaro", "Kilimanjaro"),
+    ("Lindi", "Lindi"),
+    ("Manyara", "Manyara"),
+    ("Mara", "Mara"),
+    ("Mbeya", "Mbeya"),
+    ("Morogoro", "Morogoro"),
+    ("Mtwara", "Mtwara"),
+    ("Mwanza", "Mwanza"),
+    ("Njombe", "Njombe"),
+    ("Pwani", "Pwani"),
+    ("Rukwa", "Rukwa"),
+    ("Ruvuma", "Ruvuma"),
+    ("Shinyanga", "Shinyanga"),
+    ("Simiyu", "Simiyu"),
+    ("Singida", "Singida"),
+    ("Songwe", "Songwe"),
+    ("Tabora", "Tabora"),
+    ("Tanga", "Tanga"),
+    ("Zanzibar", "Zanzibar"),
+]
+REGION_VALUES = [value for value, _ in REGIONS]
