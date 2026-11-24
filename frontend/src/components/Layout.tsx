@@ -40,6 +40,8 @@ export default function Layout({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const canSell = user?.role === 'seller' || user?.role === 'dealer';
+  // The home page draws its own full-width hero, so it manages its own width.
+  const fullWidth = location.pathname === '/';
 
   useEffect(() => {
     setMenuOpen(false);
@@ -150,7 +152,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         )}
       </header>
 
-      <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
+      <main id="main" className={fullWidth ? 'w-full flex-1' : 'mx-auto w-full max-w-6xl flex-1 px-4 py-8'}>
         {children}
       </main>
 

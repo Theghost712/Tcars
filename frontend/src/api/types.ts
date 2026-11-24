@@ -179,6 +179,7 @@ export interface Dashboard {
 }
 
 export interface HomeFeed {
+  stats: { live_listings: number; verified_dealers: number; regions: number };
   featured: VehicleCard[];
   recent: VehicleCard[];
   regions: { region: string; count: number }[];

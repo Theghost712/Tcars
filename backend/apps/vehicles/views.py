@@ -240,7 +240,14 @@ class HomeFeedView(APIView):
         regions = (
             live.values("region").annotate(count=Count("id")).order_by("-count", "region")[:12]
         )
+        from apps.dealers.models import Dealer, VerificationStatus
+
         return Response({
+            "stats": {
+                "live_listings": live.count(),
+                "verified_dealers": Dealer.objects.filter(verification_status=VerificationStatus.VERIFIED).count(),
+                "regions": live.values("region").distinct().count(),
+            },
             "featured": VehicleCardSerializer(featured, many=True, context=ctx).data,
             "recent": VehicleCardSerializer(recent, many=True, context=ctx).data,
             "regions": list(regions),
